@@ -10,7 +10,7 @@
 	
 		<div class="form-group">
 			<label for="name">Name:</label>		
-			<input id="name" class="form-control @if($errors->has('name')) is-invalid @else is-valid @endif" type="text" name="name" value="{{ old('name') }}" >
+			<input id="name" class="form-control @if($errors->any()) @if($errors->has('name')) is-invalid @else is-valid @endif @endif" type="text" name="name" value="{{ old('name') }}" >
 			<div class="invalid-feedback">
 				@error('name')
 					{{ $message }}
@@ -19,7 +19,7 @@
 		</div>
 		<div class="form-group">
 			<label for="email">Email:</label>		
-			<input id="email" class="form-control @if($errors->has('email')) is-invalid @else is-valid @endif" type="email" name="email" value="{{ old('email') }}" >
+			<input id="email" class="form-control @if($errors->any()) @if($errors->has('email')) is-invalid @else is-valid @endif @endif" type="email" name="email" value="{{ old('email') }}" >
 			<div class="invalid-feedback">
 				@error('email')
 					{{ $message }}
